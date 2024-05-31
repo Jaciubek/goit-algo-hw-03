@@ -12,7 +12,7 @@ def copy_files_recursively(source, destination):
             source_path = os.path.join(source, item)
             if os.path.isdir(source_path):
                 # Recursively process subdirectories
-                new_destination = os.path.join(destination, os.path.basename(item_path))
+                new_destination = os.path.join(destination, os.path.basename(source_path))
                 copy_files_recursively(source_path, new_destination)
             else:
                 # Process files
