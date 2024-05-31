@@ -4,7 +4,7 @@ import argparse
 
 def copy_files_recursively(source, destination):
     try:
-        # Create the destination directory if it doesn't exist
+        # Create the destination directory when it doesn't exist
         if not os.path.exists(destination):
             os.makedirs(destination)
         
@@ -16,7 +16,7 @@ def copy_files_recursively(source, destination):
                 copy_files_recursively(source_path, new_destination)
             else:
                 # Process files
-                file_ext = os.path.splitext(item)[1][1:].lower()  # Get the file extension without the dot
+                file_ext = os.path.splitext(item)[1][1:].lower()  # Make the file extension without the dot
                 ext_dir = os.path.join(destination, file_ext)
                 if not os.path.exists(ext_dir):
                     os.makedirs(ext_dir)
